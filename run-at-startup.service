@@ -1,0 +1,12 @@
+[Unit]
+Description=Run script at startup after all systemd services are loaded
+After=default.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/bin/bash /usr/local/bin/auto-shutdown.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
